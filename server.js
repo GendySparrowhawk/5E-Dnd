@@ -4,9 +4,10 @@ const db = require('./config/connection');
 const { engine } = require('express-handlebars');
 const session = require('express-session');
 
-
 // view routes
-
+const viewRoutes = require('./controllers/view_routes');
+const userRoutes = require('./controllers/user_routes');
+const postRoutes = require('./controllers/review_routes');
 
 const PORT = process.env.PORT || 3333;
 
@@ -25,9 +26,8 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
-
-app.use('/');
-app.use('/auth', user_routes);
+app.use('/', [viewRoutes, postRoutes]);
+app.use('/auth', userRoutes);
 
 db.sync({ force: false })
 .then(() => {
