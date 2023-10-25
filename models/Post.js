@@ -11,7 +11,7 @@ Post.init({
     validate: {
       len: {
         args: 3,
-        msg: ''
+        msg: 'you have more opinions than that , be true to yourself'
       }
     }
   },
@@ -22,7 +22,7 @@ Post.init({
     }
   }
 }, {
-  modelName: 'user_Posts',
+  modelName: 'user_posts',
   freezeTableName: true,
   sequelize: db
 });
