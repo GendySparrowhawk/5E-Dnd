@@ -6,6 +6,13 @@ const dayjs = require('dayjs');
 class Post extends Model { }
 
 Post.init({
+  title: {
+    type: DataTypes.STRING,
+    validate: {
+      args: 3,
+      msg: 'you have more opinions than that , be true to yourself'
+    }
+  },
   text: {
     type: DataTypes.STRING,
     validate: {

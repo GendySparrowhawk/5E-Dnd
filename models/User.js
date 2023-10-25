@@ -62,7 +62,7 @@ User.init({
 });
 
 User.prototype.validatePass = async function (form_password) {
-    const is_vaild = await compare(from_password, this.password);
+    const is_vaild = await compare(form_password, this.password);
 
     return is_vaild;
 }

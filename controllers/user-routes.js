@@ -22,7 +22,7 @@ router.post('/register', async (req, res) => {
       }
     });
     if (!user) {
-      req.session.errors = ['No user found with that email address.'];
+      req.session.errors = ['No user found with that user name'];
   
       return res.redirect('/login');
     }

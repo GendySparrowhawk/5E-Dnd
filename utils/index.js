@@ -22,7 +22,7 @@ async function authenticate(req, res, next) {
     if(user_id_) {
         const user = await User.findByPk(req.session.user_id);
 
-        req.user = user.get({ plain: ture });
+        req.user = user.get({ plain: true });
     }
 
     next();

@@ -1,0 +1,15 @@
+<div class="div-form">
+  <form class="standard-form" action="/auth/login" method="POST">
+    <h1 class="gamer">pew_pew</h1>
+
+    {{#each errors}}
+    <p class="error text-center">{{this}}</p>
+    {{/each}}
+
+    <div class="container-form">
+      <input class="player" type="text" name="user_name" placeholder="please enter your user name">
+      <input class="player" type="password" name="password" placeholder="please enter your password">
+      <button></button>
+    </div>
+</div>
+</form>
