@@ -5,9 +5,9 @@ const { engine } = require('express-handlebars');
 const session = require('express-session');
 
 // view routes
-const viewRoutes = require('./controllers/view_routes');
-const userRoutes = require('./controllers/user_routes');
-const postRoutes = require('./controllers/review_routes');
+const userRoutes = require('./controllers/user-routes');
+const viewRoutes = require('./controllers/view-routes');
+const postRoutes = require('./controllers/post-routes');
 
 const PORT = process.env.PORT || 3333;
 
