@@ -16,7 +16,7 @@ function isAuthenticaed(req, res, next) {
     next();
 };
 
-async function authenticate(rea, res, next) {
+async function authenticate(req, res, next) {
     const user_id_ = req.session.user_id;
 
     if(user_id_) {
