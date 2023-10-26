@@ -8,13 +8,13 @@ function isLoggedIn(req, res, next) {
     next();
 };
 
-function isAuthenticaed(req, res, next) {
+function isAuthenticated(req, res, next) {
     if (!req.session.user_id) {
-        return res.redirect('/login');
+      return res.redirect('/login');
     }
-
+  
     next();
-};
+  }
 
 async function authenticate(req, res, next) {
     const user_id_ = req.session.user_id;
@@ -28,4 +28,4 @@ async function authenticate(req, res, next) {
     next();
 }
 
-module.exports = { isLoggedIn, isAuthenticaed, authenticate }
+module.exports = { isLoggedIn, isAuthenticated, authenticate }
