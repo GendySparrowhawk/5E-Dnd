@@ -1,24 +1,27 @@
 <header class="banner">
     <h1>You wake up in a tavern, what do you do?</h1>
 </header>
-<form action="/post" method="POST">
-    {{#each errors}}
-    <p class="error text-center">{{this}}</p>
-    {{/each}}
-<input type="text" name="title" placeholder="Title">
-<input type="text" name="text" placeholder="Hot take! Roll with advantage!">
-<button>Post</button>
-</form>
+    <form action="/post" method="POST">
+        {{#each errors}}
+        <p class="error text-center">{{this}}</p>
+        {{/each}}
+        <input type="text" name="title" placeholder="Title">
+        <input type="text" name="text" placeholder="Hot take! Roll with advantage!">
+        <button>Post</button>
+    </form>
 
-{{#each post}}
-<section class="postcard">
-    <div class="posthead">
-        <h2>{{title}}</h2>
-        <h3>{{author.user_name}}</h3>
-        <p>{{date}}</p>
-    </div>
-    <div class="postbody">
-        <p>{{text}}</p>
-    </div>
+<div class="container">
+    {{#each posts}}
+    <section class="postcard">
+        <div class="posthead">
+            <h2>{{title}}</h2>
+            <h3>Posted By: {{author.user_name}}</h3>
+            <p>{{date}}</p>
+        </div>
+        <div class="postbody">
+            <p>{{text}}</p>
+        </div>
 
-</section {{/each}}>
+
+    </section {{/each}}>
+</div>

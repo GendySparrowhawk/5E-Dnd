@@ -1,12 +1,27 @@
+<header class="fantasy-header">
+    <h2>Behold! A treuasure of hot takes worthy of a mighty gold dragon!</h2>
+    <h3>What secrets will you share?</h3>
+</header>
 {{#each posts}}
-<section class="postcard">
-    <div class="posthead">
-        <h2>{{this.title}}</h2>
-        <h3>{{this.author.user_name}}</h3>
-    </div>
-    <div class="postbody">
-        <p>{{this.text}}</p>
-        <p>{{this.date}}</p>
-    </div>
-</section>
-{{/each}}
+<div class="container">
+    <section class="postcard">
+        <div class="posthead">
+            <h2>{{title}}</h2>
+            <h3>Posted By: {{author.user_name}}</h3>
+            <p>{{date}}</p>
+        </div>
+        <div class="postbody">
+            <p>{{text}}</p>
+        </div>
+        <form action="/post/{{this.id}}/comment" method="POST">
+            <input type="text" name="text" placeholder="contested roll">
+            <button>Add Comment</button>
+        </form>
+        <label for="comments">Comments:</label>
+        <select id="comments" name="comments">
+            {{#each comments}}
+            <option value="{{this.id}}">{{this.text}}</option>
+            {{/each}}
+        </select>
+    </section>
+</div {{/each}}>

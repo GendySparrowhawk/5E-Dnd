@@ -21,7 +21,7 @@ Post.init({
     }
   }
 }, {
-  modelName: 'user_posts',
+  modelName: 'post',
   freezeTableName: true,
   sequelize: db
 });

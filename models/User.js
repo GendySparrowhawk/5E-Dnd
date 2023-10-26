@@ -50,7 +50,7 @@ User.init({
         }
     }
 }, {
-    modelName: 'users',
+    modelName: 'user',
     freezeTableName: 'true',
     sequelize: db,
     hooks: {
