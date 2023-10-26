@@ -1,14 +1,14 @@
 <header class="banner">
     <h1>You wake up in a tavern, what do you do?</h1>
 </header>
-    <form action="/post" method="POST">
-        {{#each errors}}
-        <p class="error text-center">{{this}}</p>
-        {{/each}}
-        <input type="text" name="title" placeholder="Title">
-        <input type="text" name="text" placeholder="Hot take! Roll with advantage!">
-        <button>Post</button>
-    </form>
+<form action="/post" method="POST">
+    {{#each errors}}
+    <p class="error text-center">{{this}}</p>
+    {{/each}}
+    <input type="text" name="title" placeholder="Title">
+    <input type="text" name="text" placeholder="Hot take! Roll with advantage!">
+    <button>Post</button>
+</form>
 
 <div class="container">
     {{#each posts}}
@@ -21,7 +21,10 @@
         <div class="postbody">
             <p>{{text}}</p>
         </div>
-
-
-    </section {{/each}}>
+        <form action="/post/{{this.id}}?_method=DELETE" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="delete-post-btn">Delete Post</button>
+        </form>
+    </section>
+    {{/each}}
 </div>

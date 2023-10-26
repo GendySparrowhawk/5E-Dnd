@@ -53,4 +53,27 @@ router.post('/post/:postId/comment', isAuthenticated, authenticate, async (req, 
   }
 });
 
+
+
+//  route for deleting a post
+router.delete('/post/:postId', async (req, res) => {
+  try {
+    const postId = req.params.postId;
+
+    // Check if the post exists
+    const post = await Post.findByPk(postId);
+    if (!post) {
+      return res.status(404).send('Post not found');
+    }
+
+    // Delete the post
+    await post.destroy();
+
+    res.redirect('/dashboard')
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error deleting post');
+  }
+});
+
 module.exports = router;

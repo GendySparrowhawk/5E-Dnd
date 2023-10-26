@@ -12,6 +12,8 @@ const postRoutes = require('./controllers/post-routes');
 // set port ot a env varibale to run on heroku
 const PORT = process.env.PORT || 3333;
 
+
+const methodOverride = require('method-override');
 const app = express();
 // proload our files to public
 app.use(express.static('./public'));
@@ -28,6 +30,8 @@ app.use(session({
     saveUninitialized: false,
     cookie: { maxAge: 60 * 60 * 1000 }
 }));
+// apparently gotta make usr emethod overide is here to hadnel route mehtods in html
+app.use(methodOverride('_method'));
 app.use('/', [viewRoutes, postRoutes]);
 app.use('/auth', userRoutes);
 // snc database and start the server
