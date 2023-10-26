@@ -1,7 +1,8 @@
 <header class="fantasy-header">
-    <h2>Behold! A treuasure of hot takes worthy of a mighty gold dragon!</h2>
+    <h2>Behold! A treasure of hot takes worthy of a mighty gold dragon!</h2>
     <h3>What secrets will you share?</h3>
 </header>
+
 {{#each posts}}
 <div class="container">
     <section class="postcard">
@@ -17,11 +18,18 @@
             <input type="text" name="text" placeholder="contested roll">
             <button>Add Comment</button>
         </form>
-        <label for="comments">Comments:</label>
-        <select id="comments" name="comments">
-            {{#each comments}}
-            <option value="{{this.id}}">{{this.text}}</option>
-            {{/each}}
-        </select>
+        <button class="toggle-comments-btn">Show Comments</button>
+        <div class="comments-container" style="display: none;">
+            <h4>Comments:</h4>
+            <ul>
+                {{#each post_comments}}
+                <li>{{this.text}}</li>
+                <li>User: {{author.user_name}}</li>
+                {{/each}}
+            </ul>
+        </div>
     </section>
-</div {{/each}}>
+</div>
+{{/each}}
+
+

@@ -13,6 +13,7 @@ router.get('/', authenticate, async (req, res) => {
         },
         {
           model: Comment,
+          as: 'post_comments',
           include: [
             {
               model: User,
@@ -20,7 +21,10 @@ router.get('/', authenticate, async (req, res) => {
             }
           ]
         }
-      ]
+      ],
+      // just learned about this little guy after hours of trying to poulate comments
+      // this returns modle instances instead of raw js objects. 
+      raw: false
     });
 
     res.render('landing', {

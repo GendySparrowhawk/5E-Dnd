@@ -205,3 +205,19 @@ form button:hover {
   font-size: 1.2rem;
   margin: 0;
 }
+
+.toggle-comments-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #343a40;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-comments-btn:hover {
+  background-color: #5a6268;
+}
