@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Op, literal } = require('sequelize');
 const { User, Post, Comment } = require('../models')
 
 const { isLoggedIn, isAuthenticated, authenticate } = require('../utils');
@@ -47,6 +48,7 @@ router.get('/', authenticate, async (req, res) => {
       include: [
         {
           model: User,
+          as: 'author'
         },
         {
           model: Comment,
@@ -54,6 +56,12 @@ router.get('/', authenticate, async (req, res) => {
             'id',
             [literal("substring(text, 1, 150)"), 'text'],
             'date'
+          ],
+          include: [
+            {
+              model: User,
+              as: 'author'
+            }
           ]
         }
       ],
@@ -63,10 +71,10 @@ router.get('/', authenticate, async (req, res) => {
 
   
 
-  res.render('profile', {
+  res.render('dashboard', {
     errors: req.session.errors,
     user: req.user,
-    posts: posts.map(r => r.get({ plain: true })),
+    posts: posts.map(p => p.get({ plain: true })),
   });
 
 });

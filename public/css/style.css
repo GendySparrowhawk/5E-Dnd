@@ -16,6 +16,41 @@
     text-decoration: underline;
   }
 
+  
+
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+
+nav img {
+    margin-right: 10px;
+    height: 40px;
+}
+
+
+nav .login-features {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+
+nav .login-features a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px; 
+}
+
+
+nav .welcome-message {
+    margin-right: 10px;
+}
   .container-form {
     max-width: 400px;
     margin: 0 auto;
@@ -52,4 +87,44 @@
 .container-form button:hover {
     background-color: #45a049;
 }
-  
+.banner {
+  text-align: center;
+  background-color: #343a40;
+  color: white;
+  padding: 20px;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+form input[type="text"] {
+  width: calc(100% - 20px);
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #343a40;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #5a6268;
+}
