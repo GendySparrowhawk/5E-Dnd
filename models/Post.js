@@ -8,19 +8,11 @@ class Post extends Model { }
 Post.init({
   title: {
     type: DataTypes.STRING,
-    validate: {
-      args: 3,
-      msg: 'you have more opinions than that , be true to yourself'
-    }
+    allowNull: false
   },
   text: {
-    type: DataTypes.STRING,
-    validate: {
-      len: {
-        args: 3,
-        msg: 'you have more opinions than that , be true to yourself'
-      }
-    }
+    type: DataTypes.TEXT,
+    allowNull: false
   },
   date: {
     type: DataTypes.VIRTUAL,

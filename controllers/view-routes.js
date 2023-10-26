@@ -41,9 +41,10 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/dashboard', authenticate, async (req, res) => {
+  console.log(req.session.user_id)
   const posts = await Post.findAll({
     where: {
-      user_id: req.session.user_id
+      author_id: req.session.user_id
     },
     include: [
       {
