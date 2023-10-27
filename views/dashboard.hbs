@@ -25,6 +25,14 @@
             <input type="hidden" name="_method" value="DELETE">
             <button type="submit" class="delete-post-btn">Delete Post</button>
         </form>
+        <form id="updateForm" action="/post/{{this.id}}" method="PUT">
+            {{#each errors}}
+            <p class="error text-center">{{this}}</p>
+            {{/each}}
+            <input type="hidden" name="_method" value="PUT">
+            <input type="text" name="updatedText" placeholder="New text">
+            <button type="submit" class="update-post-btn">Update Post</button>
+        </form>
     </section>
     {{/each}}
 </div>
