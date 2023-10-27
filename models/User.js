@@ -4,7 +4,7 @@ const db = require('../config/connection');
 const { hash, compare } = require('bcrypt');
 
 class User extends Model { }
-
+// userclass has email and b-crypt to has passewords more securly
 User.init({
     id: {
         type: DataTypes.INTEGER,

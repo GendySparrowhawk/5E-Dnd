@@ -3,7 +3,7 @@
   const dayjs = require('dayjs');
 
   class Comment extends Model { }
-
+// comment model also has date-time added. 
   Comment.init({
       text: {
           type: DataTypes.STRING,

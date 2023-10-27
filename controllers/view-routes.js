@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Op, literal } = require('sequelize');
 const { User, Post, Comment } = require('../models')
 const { isLoggedIn, isAuthenticated, authenticate } = require('../utils');
-
+// reload the landing page with all new data
 router.get('/', authenticate, async (req, res) => {
   try {
     const posts = await Post.findAll({
@@ -58,7 +58,7 @@ router.get('/login', (req, res) => {
 
   req.session.errors = [];
 });
-
+// get to useres dashboard with all the previous posts
 router.get('/dashboard', authenticate, async (req, res) => {
   console.log(req.session.user_id)
   const posts = await Post.findAll({

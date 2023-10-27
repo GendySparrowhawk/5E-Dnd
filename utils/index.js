@@ -1,10 +1,10 @@
 const User = require('../models/User');
-
+// this page is made to handle authentication functions
 function isLoggedIn(req, res, next) {
   if (req.session.user_id) {
     return res.redirect('/');
   }
-
+// when you log in kick you to landing page
   next();
 }
 
@@ -13,7 +13,7 @@ function isAuthenticated(req, res, next) {
   if (!req.session.user_id) {
     return res.redirect('/login');
   }
-
+// if no session detected kick to login screen
   next();
 }
 
